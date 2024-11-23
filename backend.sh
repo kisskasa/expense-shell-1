@@ -8,9 +8,7 @@ echo "Please enter DB password:"
 read -s mysql_root_password
 
 dnf module disable nodejs -y &>>LOGFILE
-
 dnf module enable nodejs:20 -y &>>LOGFILE
-
 dnf install nodejs -y &>>LOGFILE
 
 id expense &>>LOGFILE
