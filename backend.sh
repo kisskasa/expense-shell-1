@@ -37,7 +37,7 @@ systemctl start backend &>>LOGFILE
 
 systemctl enable backend &>>LOGFILE
 
-dnf install mysql -y &>>LOGFILElient"
+dnf install mysql -y &>>LOGFILElient
 
 mysql -h db.chandrakasa.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>LOGFILE
 
