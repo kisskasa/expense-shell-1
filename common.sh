@@ -1,4 +1,11 @@
 
+set -e
+
+handle_error(){
+    echo "Error occured at line number: $1, error command: $2"
+}
+
+trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
 
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
@@ -8,8 +15,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-echo "Please enter DB password:"
-read -s mysql_root_password
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
